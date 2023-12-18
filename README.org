@@ -1,0 +1,37 @@
+#+title: Readme
+* Star
+Star is the management tool to manage operations and configure the starintel project
+
+Star also lets you interact with the starRouter message queue.
+
+** Installation
+#+begin_src shell
+git clone https://github.com/lost-rob0t/star-cli.git star/ && cd star
+nimble install
+#+end_src
+
+*** Configuration file
+after you have installed ~star~ edit the file "config.ini" and put the file in ~~/.config/starintel/config.ini~
+
+** Usage
+Get help
+#+begin_src shell
+star --help
+#+end_src
+#+begin_src shell
+star <subCommand> --help
+#+end_src
+
+*** Init database
+#+begin_src shell
+star init
+#+end_src
+
+*** Create targets
+Targets are a document that holds configuration for automations
+
+To create a new target
+
+#+begin_src shell
+star target -a <bot name> -t <bot input> -o <extra json options if needed>
+#+end_src
