@@ -15,10 +15,29 @@ after you have installed ~star~ edit the file "config.ini" and put the file in ~
 
 ** Usage
 Get help
-#+begin_src shell
-star --help
+#+begin_src sh :results output replace
+./star --help
 #+end_src
-#+begin_src shell
+
+#+RESULTS:
+#+begin_example
+Usage:
+  star {SUBCMD}  [sub-command options & parameters]
+where {SUBCMD} is one of:
+  help              print comprehensive or per-cmd help
+  target
+  init
+  insert_data
+  publishDocuments
+  subscribe
+
+star {-h|--help} or with no args at all prints this message.
+star --help-syntax gives general cligen syntax help.
+Run "star {help SUBCMD|SUBCMD --help}" to see help for just SUBCMD.
+Run "star help" to get *comprehensive* help.
+#+end_example
+
+#+begin_src sh :results output replace
 star <subCommand> --help
 #+end_src
 
@@ -27,7 +46,7 @@ star <subCommand> --help
 star init
 #+end_src
 
-*** Create targets
+*** Create target json
 Targets are a document that holds configuration for automations
 
 To create a new target

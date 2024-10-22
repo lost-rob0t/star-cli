@@ -16,6 +16,7 @@ when isMainModule:
                       "topic": "The message topic to be used.",
                       "isTarget": "Is this a target input for scanning?",
                       "actor": "The Actor for target input to be sent to, only used when isTarget is true."}.toTable
+  # TODO Move this to starRouter subcommand ./star router subscribe
   const subscribeHelp = {"apiAddress": "The API Address of the starRouter message queue. Defaults to tcp://127.0.0.1:6001",
                       "subAddress": "The subcription address of the starRouter message queue. Defaults to tcp://127.0.0.1:6000",
                       "topic": "The message topic to be used.",
