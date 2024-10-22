@@ -12,8 +12,10 @@ bin           = @["star"]
 
 requires "nim >= 1.6.14"
 requires "mycouch"
-requires "https://github.com/lost-rob0t/starintel-doc.nim.git"
-requires "https://github.com/lost-rob0t/starRouter.git"
+requires "https://github.com/lost-rob0t/starintel-doc.nim.git >= 0.7.3"
+# Broken!
+# Will Be re-added, just a temp fix
+# requires "https://github.com/lost-rob0t/starRouter.git"
 requires "cligen"
 
 task install, "installs star-cli":
