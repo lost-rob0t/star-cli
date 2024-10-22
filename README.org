@@ -3,6 +3,10 @@
 Star is the management tool to manage operations and configure the starintel project
 
 Star also lets you interact with the starRouter message queue.
+** Notice
+The starRouter has been deprecated in favor of star-server.
+Stuff like "init" will be removed as star-server now handles that.
+
 
 ** Installation
 #+begin_src shell
@@ -42,6 +46,7 @@ star <subCommand> --help
 #+end_src
 
 *** Init database
+DEPRECATED
 #+begin_src shell
 star init
 #+end_src

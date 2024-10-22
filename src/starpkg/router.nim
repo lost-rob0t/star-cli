@@ -10,9 +10,10 @@ proc publishDoc*(client: Client, doc: JsonNode, topic: string) {.async.} =
 
 proc publishTarget(client: Client, doc: JsonNode, actor: string) {.async.} =
   let msg = newMessage(doc.to(Target), proto.target, "", actor)
+  echo msg.data.target
   await client.emit(msg)
 
-proc publishDocuments*(apiAddress: string = "tcp://127.0.0.1:6001", subAddress: string = "tcp://127.0.0.1:6000", isTarget: bool = false, topic, actor: string = "", path: string) =
+proc publishDocuments*(apiAddress: string = "tcp://127.0.0.1:6001", subAddress: string = "tcp://127.0.0.1:6000", isTarget: bool = false, topic: string = "", actor: string = "", path: string) =
   var client = newClient("starcli", subAddress, apiAddress, 6, @[""])
   let f = open(path, fmRead)
   defer: f.close()
@@ -22,7 +23,6 @@ proc publishDocuments*(apiAddress: string = "tcp://127.0.0.1:6001", subAddress: 
       waitFor client.publishTarget(line.parseJson(), actor)
   else:
     for line in f.lines:
-      echo line
       waitFor client.publishDoc(line.parseJson(), topic)
 
 proc allMsg(doc: Message[JsonNode]): bool =
